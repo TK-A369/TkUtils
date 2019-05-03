@@ -21,4 +21,8 @@ typedef struct
 	char pNumber;
 } port;
 
+extern port newPort(portName pName, char pNumber);
+extern void pinMode(port p, portMode mode);
+extern void pinWrite(port p, portState pState);
+
 #endif /* PINUTIL_H_ */
