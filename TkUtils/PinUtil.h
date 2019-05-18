@@ -9,20 +9,20 @@
 #ifndef PINUTIL_H_
 #define PINUTIL_H_
 
-typedef enum {PB, PC, PD} portName;
+typedef enum {PB, PC, PD} pinNames;
 
-typedef enum {INPUT, OUTPUT} portMode;
+typedef enum {INPUT, OUTPUT} pinModes;
 
-typedef enum {HIGH, LOW} portState;
+typedef enum {HIGH, LOW} pinStates;
 
 typedef struct
 {
-	portName pName;
+	pinNames pName;
 	char pNumber;
-} port;
+} pin;
 
-extern port newPort(portName pName, char pNumber);
-extern void pinMode(port p, portMode mode);
-extern void pinWrite(port p, portState pState);
+extern pin newPin(pinNames pName, char pNumber);
+extern void pinMode(pin p, pinModes mode);
+extern void pinWrite(pin p, pinStates pState);
 
 #endif /* PINUTIL_H_ */

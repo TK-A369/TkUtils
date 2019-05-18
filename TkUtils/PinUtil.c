@@ -8,15 +8,15 @@
 #include <avr/io.h>
 #include "PinUtil.h"
 
-port newPort(portName pName, char pNumber)
+pin newPin(pinNames pName, char pNumber)
 {
-	port p;
+	pin p;
 	p.pName=pName;
 	p.pNumber=pNumber;
 	return p;
 }
 
-void pinMode(port p, portMode mode)
+void pinMode(pin p, pinModes mode)
 {
 	if(mode == INPUT)
 	{
@@ -50,7 +50,7 @@ void pinMode(port p, portMode mode)
 	}
 }
 
-void pinWrite(port p, portState pState)
+void pinWrite(pin p, pinStates pState)
 {
 	if(pState == LOW)
 	{
